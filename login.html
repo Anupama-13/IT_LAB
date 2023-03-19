@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>login.html</title>
+</head>
+<body>
+ <script type="text/javascript" >
+ function frmvalidation()
+{
+//Username Validation 
+if(logform.name.value=="")
+{
+alert("You must enter a User Name"); 
+logform.name.focus();
+return false;
+}
+if(logform.name.value.length<3)
+{
+alert("User Name must consist of atleast 3 character"); 
+logform.name.focus();
+return false;
+}
+
+//Password Validation
+if(logform.pwd.value.length<6)
+{
+alert("Please enter Password not less than 6"); 
+logform.psd.focus();
+return false;
+}
+}
+</script>
+    <form name="logform" onsubmit="return frmvalidation()" method="post" action="Login">
+        <table align="centre">
+            <caption><br><br>Login Form </caption>
+            <tr><td> User id</td>
+                <td><input type="text"name="name"><br><br></td>
+            </tr>
+            <tr><td> Password</td>
+                <td><input type="password"name="pwd"><br><br></td>
+            </tr>
+            <tr><td></td>
+                <td><input type="submit"name="submit"><br>
+                <td><input type="reset" name="reset"></td><br></td>
+            </tr>
+        </table>
+    </form>
+    
+</body>
+</html>

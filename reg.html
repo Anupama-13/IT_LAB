@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Registration</title>
+</head>
+<body>
+<script type="text/javascript">
+  function frmvalidation()
+{
+    //phone number validation 
+flag=true; 
+if(regform.phno.value.length!=10){
+    flag=false;
+}
+var phno=regform.phno.value; 
+for(i=0;i<phno.length;i++)
+{
+if(!(phno.charCodeAt(i)>=48&&phno.charCodeAt(i)<=57))
+    flag=false;
+}
+if(!flag)
+{
+alert("Please enter valid Phone Number"); 
+regform.phno.focus();
+return false;
+}
+//Username Validation 
+if(regform.name.value=="")
+{
+alert("You must enter a Name"); 
+regform.name.focus();
+return false;
+}
+if(regform.name.value.length<3)
+{
+alert(" Name must consist of atleast 3 character"); 
+regform.name.focus();
+return false;
+}
+var str=regform.name.value; 
+for(i=0;i<str.length;i++)
+if(!(str.charCodeAt(i)>=65&& str.charCodeAt(i)<=91)
+&& !(str.charCodeAt(i)>=97 && str.charCodeAt(i)<=122))
+{
+alert("Please enter valid Name"); 
+regform.name.focus();
+return false;
+}
+
+//Password Validation
+if(regform.pwd.value.length<6)
+{
+alert("Please enter Password not less than 6"); 
+regform.psd.focus();
+return false;
+}
+//email validation
+ flag=true; 
+ if(regform.email.value=="")
+     flag=false;
+
+var str2=regform.email.value; 
+if(allValidChars(str2))
+for(i=0;i<str2.length;i++)
+
+if(str2.charAt(i)=="@")
+{
+if((str2.substr(i+1,9)=="yahoo.com")||(str2.substr(i+1,9)=="gmail.com"))
+{
+flag=true;
+break;
+}
+}
+else
+    flag=false;
+if(!(flag))
+{
+alert("Please enter a valid Email ID");
+regform.email.focus();
+return false;
+}
+
+
+}
+
+</script>
+<form name="regform" onsubmit="return frmvalidation()" method="post" action="Registration">
+  <center>
+    <table>
+      <caption>
+        <br><h3> Registration Form<br></h3><br>
+      </caption>
+        <tr>
+            <td>Name</td>
+            <td><input type="text"name="name" required="required"><br></td>
+        </tr>
+      <tr>
+        <td> Email </td>
+        <td><input type="email" name="email" required="required"><br></td>
+      </tr>
+      <tr>
+        <td> Username </td>
+        <td><input type="text" name="usrnm" required="required"><br></td>
+      </tr>
+      </tr>
+        <td> Password  </td>
+        <td> <input type="password" name="pwd" required="required"><br></td>
+       </tr>
+       <tr>
+      <td>
+        Mobile Number</td>
+      <td><input type="text" name="phno" required="required"><br></td>
+      </tr>
+    
+      <tr>
+        <td>Address</td>
+        <td><textarea name="address" rows="4" cols="30" required="required"></textarea><br></td>
+      </tr>
+      <tr>
+        <td><input type="submit" value="Submit"></td>
+        <td><input type="reset" value="Reset"> </td>
+      </tr>
+    </table>
+  </center>
+</form>
+</body>
+</html>

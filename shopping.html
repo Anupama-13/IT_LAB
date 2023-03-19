@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Shopping Cart</title>
+</head>
+<body>
+<center>
+    <h1>Shopping Cart</h1>
+</center>
+    <br><br><br><br><br>
+<form name = "shpfrm" method="post" action="payment">
+    <table align="center">
+        <tr>
+            <td>TextBooks</td>
+            <td>
+                <select name="bookslist" required>
+                    <option value="">Select</option>-->
+                    <option value="Data Structures">Data Structures</option>
+                    <option value="OOP using C++">OOP using C++</option>
+                    <option value="DBMS"> DBMS</option>
+                    <option value="Operating System">Operating System</option>
+                    <option value="Professional Skill">Professional Skills</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td>Quantity</td>
+            <td> <input type="number"name="qnty" required="required"></td>
+        </tr>
+        <tr>
+            <td><input type="submit" value="Continue to payment" /></td>
+        </tr>
+    </table>
+</form>
+</body>
+</html>

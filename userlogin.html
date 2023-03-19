@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>User</title>
+</head>
+<script type="text/javascript" >
+function frmvalidation()
+{
+    if(userform.usrnm.value=="")
+    {
+        alert("Enter Username");
+        userform.usrnm.focus();
+        return false;
+    }
+
+}
+</script>
+<body>
+    <form name="userform" method="post" action="userdetails">
+      <center>
+          <br><br><br>
+         Userid <input type="text" name="usrnm" required="required">
+        <br><br><br>
+        <input type="submit" value="Submit"  onClick="return frmvalidation()">
+      </center>
+    </form>
+    </body>
+</html>
